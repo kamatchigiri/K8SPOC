@@ -1,0 +1,190 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	elementFormDefault="qualified" targetNamespace="http://fedex.com/TestService"
+	version="2.0.0" xmlns:tns="http://fedex.com/TestService">
+
+
+	<!-- <xs:element name="getEmployeeResponse"> -->
+	<!-- <xs:complexType> -->
+	<!-- <xs:sequence> -->
+	<!-- <xs:element name="employee" type="tns:employee" /> -->
+	<!-- </xs:sequence> -->
+	<!-- </xs:complexType> -->
+
+	<!-- </xs:element> -->
+	<xs:complexType name="serviceStatus">
+		<xs:sequence>
+			<xs:element name="statusCode" type="xs:string" />
+			<xs:element name="message" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="accountDetails">
+		<xs:sequence>
+			<xs:element name="effectiveTimestamp" type="xs:string" />
+			<xs:element name="objId" type="xs:int" />
+			<xs:element name="externalId" type="xs:string" />
+			<xs:element name="TypeCode" type="xs:string" />
+			<xs:element name="expirationTimestamp" type="xs:string" />
+
+
+			<xs:element name="customerView" type="xs:string" />
+			<xs:element name="customerViewModelValue" type="xs:string" />
+			<xs:element name="companyTypeCode" type="xs:string" />
+			<xs:element name="companyDescription" type="xs:string" />
+
+
+			<xs:element name="PhoneTypeCode" type="xs:string" />
+			<xs:element minOccurs="0" name="phcountryCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="areaCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="3" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="phoneNumber">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="20" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element minOccurs="0" name="extension">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="6" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+
+
+			<xs:element name="AddressTypeCode" type="xs:string" />
+			<xs:element name="streetLine1">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="streetLine2">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="streetLine3">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="64" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="city">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="state">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="60" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="postalCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="16" />
+						<xs:minLength value="1" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+			<xs:element name="addcountryCode">
+				<xs:simpleType>
+					<xs:restriction base="xs:string">
+						<xs:maxLength value="2" />
+						<xs:minLength value="2" />
+					</xs:restriction>
+				</xs:simpleType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="addAccountRequest">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="effectiveTimestamp" type="xs:string" />
+			<xs:element name="objId" type="xs:int" />
+			<xs:element name="externalId" type="xs:string" />
+			<xs:element name="TypeCode" type="xs:string" />
+			<xs:element name="expirationTimestamp" type="xs:string" />
+			
+			<xs:element name="customerView" type="xs:string" />
+			<xs:element name="customerViewModelValue" type="xs:string" />
+			<xs:element name="companyTypeCode" type="xs:string" />
+			<xs:element name="companyDescription" type="xs:string" />
+			
+			<xs:element name="PhoneTypeCode" type="xs:string" />
+			<xs:element name="phcountryCode" type="xs:string" />	
+			<xs:element name="areaCode" type="xs:string" />
+			<xs:element name="phoneNumber" type="xs:string" />
+			<xs:element name="extension" type="xs:string" />
+			
+			
+			<xs:element name="AddressTypeCode" type="xs:string" />
+			<xs:element name="streetLine1" type="xs:string" />	
+			<xs:element name="streetLine2" type="xs:string" />			
+			<xs:element name="streetLine3" type="xs:string" />		
+			<xs:element name="city" type="xs:string" />
+			<xs:element name="state" type="xs:string" />		
+			<xs:element name="postalCode" type="xs:string"/>
+			<xs:element name="addcountryCode" type="xs:string" />		
+
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+
+	<xs:element name="addAccountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="serviceStatus" type="tns:serviceStatus" />
+				<xs:element name="accountDetails" type="tns:accountDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getAccountRequest">
+	<xs:complexType>
+		<xs:sequence>
+			<xs:element name="objId" type="xs:int" />
+		</xs:sequence>
+	</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="getAccountResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="accountDetails" type="tns:accountDetails" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>
